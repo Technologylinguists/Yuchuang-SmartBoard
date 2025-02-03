@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>语创科技白板</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 公告弹窗 -->
+    <div id="announcement" class="announcement-modal">
+      <div class="announcement-content">
+        <span id="close-announcement" class="close-button">×</span>
+        <h2>欢迎使用语创科技白板！</h2>
+        <p>
+          这是一个专为教学设计的白板工具，支持画笔、橡皮擦、清屏和保存功能。点击下方工具栏开始使用吧！
+        </p>
+        <div class="tips">
+          <p><strong>小提示：</strong></p>
+          <ul>
+            <li>使用画笔绘制内容。</li>
+            <li>使用橡皮擦擦除错误。</li>
+            <li>点击清屏按钮重置画布。</li>
+            <li>保存按钮可将内容保存为图片。</li>
+          </ul>
+          <p>
+            项目开发：<a
+              class="hover:cursor-pointer hover:underline"
+              target="__blank"
+              href="https://www.uopy.top/"
+              >科技语者</a
+            >
+          </p>
+          <p>
+            开源协议:<a
+              class="hover:cursor-pointer hover:underline"
+              target="__blank"
+              href="https://cnb.cool/kejiyuzhe/Yuchuang-SmartBoard?tabValue=Apache-2.0-ov-file"
+              >Apache-2.0 license</a
+            >
+          </p>
+          <p>
+            开源地址：<a
+              class="hover:cursor-pointer hover:underline"
+              target="__blank"
+              href="https://cnb.cool/kejiyuzhe/Yuchuang-SmartBoard"
+              >CNB</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 工具栏 -->
+    <div class="toolbar">
+      <button id="brush" class="tool-button active">🖌️ 画笔</button>
+      <button id="eraser" class="tool-button">🧽 橡皮</button>
+      <button id="clear" class="tool-button">🧹 清屏</button>
+      <button id="save" class="tool-button">💾 保存</button>
+    </div>
+
+    <!-- 画布 -->
+    <canvas id="whiteboard"></canvas>
+
+    <!-- 画笔设置弹窗 -->
+    <div id="brush-settings" class="modal">
+      <div class="modal-content">
+        <h2>画笔设置</h2>
+        <label for="brush-size">大小:</label>
+        <input type="range" id="brush-size" min="1" max="50" value="5" />
+        <label for="brush-color">颜色:</label>
+        <input type="color" id="brush-color" value="#000000" />
+        <button id="close-brush-settings" class="modal-close">关闭</button>
+      </div>
+    </div>
+
+    <!-- 橡皮设置弹窗 -->
+    <div id="eraser-settings" class="modal">
+      <div class="modal-content">
+        <h2>橡皮设置</h2>
+        <label for="eraser-size">大小:</label>
+        <input type="range" id="eraser-size" min="1" max="50" value="10" />
+        <button id="close-eraser-settings" class="modal-close">关闭</button>
+      </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
